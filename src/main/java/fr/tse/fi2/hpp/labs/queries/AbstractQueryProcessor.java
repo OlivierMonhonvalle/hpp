@@ -17,6 +17,7 @@ import fr.tse.fi2.hpp.labs.beans.GridPoint;
 import fr.tse.fi2.hpp.labs.beans.Route;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 import fr.tse.fi2.hpp.labs.dispatcher.StreamingDispatcher;
+import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
 
 /**
  * Every query must extend this class that provides basic functionalities such
@@ -52,6 +53,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 * Internal queue of events
 	 */
 	public final BlockingQueue<DebsRecord> eventqueue;
+	public final BlockingQueue<Float> listsum;
 	/**
 	 * Global measurement
 	 */
@@ -69,7 +71,9 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		this.measure = measure;
 		// Initialize queue
 		this.eventqueue = new LinkedBlockingQueue<>();
-
+		this.listsum = new LinkedBlockingQueue<>();
+		WriteQuery th1 = new WriteQuery(listsum,id);
+		new Thread ( th1). start ();
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
@@ -214,6 +218,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 			logger.error("Cannot property close the output file for query "
 					+ id, e);
 		}
+		WriteQuery.poison(1);
 		// Notify finish time
 		measure.notifyFinish(this.id);
 		// Decrease latch count
