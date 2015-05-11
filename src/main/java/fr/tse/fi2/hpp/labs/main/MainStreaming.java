@@ -68,6 +68,8 @@ public class MainStreaming {
 		} catch (InterruptedException e) {
 			logger.error("Error while waiting for the program to end", e);
 		}
+		
+		
 		// Output measure and ratio per query processor
 		measure.setProcessedRecords(dispatch.getRecords());
 		measure.outputMeasure();

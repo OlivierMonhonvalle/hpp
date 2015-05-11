@@ -72,8 +72,8 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		// Initialize queue
 		this.eventqueue = new LinkedBlockingQueue<>();
 		this.listsum = new LinkedBlockingQueue<>();
-		WriteQuery th1 = new WriteQuery(listsum,id);
-		new Thread ( th1). start ();
+		//WriteQuery th1 = new WriteQuery(listsum,id);
+		//new Thread (th1). start ();
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
@@ -218,11 +218,11 @@ public abstract class AbstractQueryProcessor implements Runnable {
 			logger.error("Cannot property close the output file for query "
 					+ id, e);
 		}
-		WriteQuery.poison(1);
 		// Notify finish time
 		measure.notifyFinish(this.id);
 		// Decrease latch count
 		latch.countDown();
+		WriteQuery.poison(-1.0f);
 	}
 
 }

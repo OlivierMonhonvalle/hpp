@@ -13,12 +13,12 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 public class WriteQuery implements Runnable  {
 
-	private BlockingQueue<Float> listsum;
+	private static BlockingQueue<Float> listsum;
 	final static Logger logger = LoggerFactory
 			.getLogger(AbstractQueryProcessor.class);
 	private BufferedWriter outputWriter;
 	int id;
-	static int poison;
+	static float poison;
 
 	public WriteQuery(BlockingQueue<Float> listsum,  int id) {
 		// TODO Auto-generated constructor stub
@@ -38,12 +38,17 @@ public class WriteQuery implements Runnable  {
 		// TODO Auto-generated method stub
 		//smeasure.notifyStart(this.id);
 		poison(0);
-		while (poison == 0) {
-			try {
-				writeLine("Somme " + this.listsum.take());
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		try {
+			while (this.listsum.take() != -1.0f) {
+				try {
+					writeLine("Somme " + this.listsum.take());
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		finish();
 	}
@@ -70,8 +75,9 @@ public class WriteQuery implements Runnable  {
 		}
 	}
 	
-	public static void poison(int p) {
+	public static void poison(float p) {
 	    poison = p;
+	    listsum.add(poison);
 	}
 
 }
