@@ -11,34 +11,34 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 public class BloomFilterGuava extends AbstractQueryProcessor {
 	
-	private BloomFilter<DebsRecord> rec;
+	private static BloomFilter<DebsRecord> rec;
 	
 	public BloomFilterGuava(QueryProcessorMeasure measure) {
 		super(measure);
+		rec = BloomFilter.create(recFunnel, 1000, 0.001);
 		// TODO Auto-generated constructor stub
 	}
 	
-	Funnel<DebsRecord> personFunnel = new Funnel<DebsRecord>() {
+	Funnel<DebsRecord> recFunnel = new Funnel<DebsRecord>() {
 		@Override
-	     public void funnel(DebsRecord person, PrimitiveSink into) {
-	       into.putFloat(person.getPickup_latitude())
-	           .putFloat(person.getPickup_longitude())
-	           .putFloat(person.getDropoff_latitude())
-	           .putFloat(person.getDropoff_longitude())
-	           .putString(person.getHack_license(), Charsets.UTF_8);
+	     public void funnel(DebsRecord record, PrimitiveSink into) {
+	       into.putFloat(record.getPickup_latitude())
+	           .putFloat(record.getPickup_longitude())
+	           .putFloat(record.getDropoff_latitude())
+	           .putFloat(record.getDropoff_longitude())
+	           .putString(record.getHack_license(), Charsets.UTF_8);
 	     }
 	   };
 	
 	@Override
 	protected void process(DebsRecord record) {
 		// TODO Auto-generated method stub
-		rec = BloomFilter.create(personFunnel, 1000, 0.001);
 		for (DebsRecord debsRecord : eventqueue) {
 			rec.put(debsRecord);
 		}
 	}
 	
-	public int check(DebsRecord recherche)
+	public static int check(DebsRecord recherche)
 	{
 		int nb = 0;
 		if (rec.mightContain(recherche)) {

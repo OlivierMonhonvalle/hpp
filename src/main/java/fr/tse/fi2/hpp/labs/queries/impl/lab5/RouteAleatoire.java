@@ -1,4 +1,4 @@
-package fr.tse.fi2.hpp.labs.main;
+package fr.tse.fi2.hpp.labs.queries.impl.lab5;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,13 +29,14 @@ import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterHash;
  * @author Julien
  * 
  */
-public class MainNonStreaming {
+public class RouteAleatoire {
 
 	final static Logger logger = LoggerFactory
-			.getLogger(MainNonStreaming.class);
+			.getLogger(RouteAleatoire.class);
     //private static BloomFilterHash q;
 	private static BloomFilterGuava q;
     private DebsRecord r;
+    private static float nb= 0;
 	/**
 	 * @param args
 	 * @throws IOException
@@ -86,11 +87,15 @@ public class MainNonStreaming {
 		float y1= (float) 40.779877;
 		float x2= (float) -73.96889;
 		float y2= (float) 40.788452f;
-		DebsRecord testF = new DebsRecord("", "", 4, 4, 4, 4, 4, 4, 4, 4, "", 4, 4, 4, 4, 4, 4, false);
-		DebsRecord testV = new DebsRecord("", l1, 4, 4, 4, 4, x1, y1, x2, y2, "", 4, 4, 4, 4, 4, 4, false);
-		
-		System.out.println("Route  : " + BloomFilterGuava.check(testV));
-		System.out.println("Route  : " + BloomFilterGuava.check(testF));
+		for(int i =0; i < 100000; i++)
+		{
+			DebsRecord test = new DebsRecord("", "", 4, 4, 4, 4, i, 4, 4, 4, "", 4, 4, 4, 4, 4, 4, false);
+			if (BloomFilterGuava.check(test) == 1)
+			{
+				nb++;
+			}
+		}
+		float p = nb/1000000.0f;
+		System.out.println(nb + " erreur sur 1 000 000 -> Pourcentage d'erreur :" + p );
 	}
-
 }
