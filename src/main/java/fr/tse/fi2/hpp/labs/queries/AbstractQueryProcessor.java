@@ -222,7 +222,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		measure.notifyFinish(this.id);
 		// Decrease latch count
 		latch.countDown();
-		WriteQuery.poison(-1.0f);
+		//WriteQuery.poison(-1.0f);
 	}
 
 }

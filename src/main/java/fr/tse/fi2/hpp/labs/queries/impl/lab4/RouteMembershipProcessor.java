@@ -11,12 +11,11 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 public class RouteMembershipProcessor extends AbstractQueryProcessor {
 	
-	private static List<DebsRecord> recs = null;
+	private static List<DebsRecord> recs =  new ArrayList<>();
 	
 	public RouteMembershipProcessor(QueryProcessorMeasure measure) {
 		super(measure);
 		// TODO Auto-generated constructor stub
-		recs = new ArrayList<>();
 		
 	}
 
@@ -26,7 +25,7 @@ public class RouteMembershipProcessor extends AbstractQueryProcessor {
 		recs.add(record);
 	}
 	
-	public static int checkroute(float d, float g, float e, float f, String license){
+	public int checkroute(float d, float g, float e, float f, String license){
 		int nb = 0;
 		for (DebsRecord debsRecord : recs) {
 			if (d == debsRecord.getPickup_longitude() && g == debsRecord.getPickup_latitude() && 
