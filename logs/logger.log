@@ -1,4 +1,4 @@
-[15:48:58] [INFO ] (RouteAleatoire.java:main:51) Finished parsing
-[15:48:58] [INFO ] (AbstractQueryProcessor.java:run:93) Starting query processor 1
-[15:48:58] [INFO ] (RouteAleatoire.java:main:75) Finished Dispatching
-[15:48:58] [INFO ] (AbstractQueryProcessor.java:run:113) Closing query processor 1
+[16:05:47] [INFO ] (MainNonStreaming.java:main:50) Finished parsing
+[16:05:47] [INFO ] (AbstractQueryProcessor.java:run:93) Starting query processor 1
+[16:05:47] [INFO ] (MainNonStreaming.java:main:74) Finished Dispatching
+[16:05:48] [INFO ] (AbstractQueryProcessor.java:run:113) Closing query processor 1

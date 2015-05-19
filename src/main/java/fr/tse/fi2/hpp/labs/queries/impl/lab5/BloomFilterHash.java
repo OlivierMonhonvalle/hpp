@@ -11,25 +11,27 @@ public class BloomFilterHash extends AbstractQueryProcessor {
 
 	private static Bloom bloom;
 	public static BitSet listeHashRoute;
+	private int k_hash;
 
-	public BloomFilterHash(QueryProcessorMeasure measure, int nb_octet) {
+	public BloomFilterHash(QueryProcessorMeasure measure, int nb_octet, int k) {
 		super(measure);
 		bloom = new Bloom(nb_octet);
 		listeHashRoute = new BitSet(nb_octet);
+		k_hash = k;
 	}
 
 	@Override
 	protected void process(DebsRecord record) {
 		String result = Bloom.getStringConca(record);
-		for(int i =0 ; i<10 ; i++){
+		for(int i =0 ; i<k_hash ; i++){
 			listeHashRoute.set(bloom.getIndex(i, result));
 		}
 	}
 
 	
-	public static boolean checkroute(DebsRecord rec){
+	public boolean checkroute(DebsRecord rec){
 		String result = Bloom.getStringConca(rec);;
-		for(int i =0 ; i<10 ; i++){
+		for(int i =0 ; i< k_hash ; i++){
 			if(!listeHashRoute.get(bloom.getIndex(i, result))){
 				return false;	
 			}
