@@ -14,7 +14,6 @@ import fr.tse.fi2.hpp.labs.dispatcher.LoadFirstDispatcher;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
 import fr.tse.fi2.hpp.labs.queries.impl.lab1.SumQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab2.SumQueryThread1;
 import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
 import fr.tse.fi2.hpp.labs.queries.impl.lab4.RouteMembershipProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterGuava;

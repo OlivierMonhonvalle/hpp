@@ -14,11 +14,11 @@ import fr.tse.fi2.hpp.labs.dispatcher.LoadFirstDispatcher;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
 import fr.tse.fi2.hpp.labs.queries.impl.lab1.SumQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab2.SumQueryThread1;
 import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
 import fr.tse.fi2.hpp.labs.queries.impl.lab4.RouteMembershipProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterGuava;
 import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterHash;
+import fr.tse.fi2.hpp.labs.queries.impl.projet.Compare;
 
 /**
  * Main class of the program. Register your new queries here
@@ -34,7 +34,7 @@ public class MainNonStreaming {
 	final static Logger logger = LoggerFactory
 			.getLogger(MainNonStreaming.class);
     //private static BloomFilterHash q;
-	private static BloomFilterGuava q;
+	private static Compare q;
     private DebsRecord r;
 	/**
 	 * @param args
@@ -46,12 +46,12 @@ public class MainNonStreaming {
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
 		// Init dispatcher and load everything
 		LoadFirstDispatcher dispatch = new LoadFirstDispatcher(
-				"src/main/resources/data/1000Records.csv");
+				"src/main/resources/data/test_01.csv");
 		logger.info("Finished parsing");
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
-		q = new BloomFilterGuava(measure);
+		q = new Compare(measure);
 		processors.add(q);
 		//processors.add(new SumQuery(measure));
 		// Register query processors
@@ -81,16 +81,17 @@ public class MainNonStreaming {
 		// Output measure and ratio per query processor
 		measure.setProcessedRecords(dispatch.getRecords());
 		measure.outputMeasure();
-		String l1= "FF965116CF16F832F2C7F940F16746E5";
-		float x1 = (float) -73.98093;
-		float y1= (float) 40.779877;
-		float x2= (float) -73.96889;
-		float y2= (float) 40.788452f;
-		DebsRecord testF = new DebsRecord("", "", 4, 4, 4, 4, 4, 4, 4, 4, "", 4, 4, 4, 4, 4, 4, false);
-		DebsRecord testV = new DebsRecord("", l1, 4, 4, 4, 4, x1, y1, x2, y2, "", 4, 4, 4, 4, 4, 4, false);
-		
-		System.out.println("Route  : " + BloomFilterGuava.check(testV));
-		System.out.println("Route  : " + BloomFilterGuava.check(testF));
+		//Compare.tabmin();
+//		String l1= "FF965116CF16F832F2C7F940F16746E5";
+//		float x1 = (float) -73.98093;
+//		float y1= (float) 40.779877;
+//		float x2= (float) -73.96889;
+//		float y2= (float) 40.788452f;
+//		DebsRecord testF = new DebsRecord("", "", 4, 4, 4, 4, 4, 4, 4, 4, "", 4, 4, 4, 4, 4, 4, false);
+//		DebsRecord testV = new DebsRecord("", l1, 4, 4, 4, 4, x1, y1, x2, y2, "", 4, 4, 4, 4, 4, 4, false);
+//		
+//		System.out.println("Route  : " + BloomFilterGuava.check(testV));
+//		System.out.println("Route  : " + BloomFilterGuava.check(testF));
 	}
 
 }

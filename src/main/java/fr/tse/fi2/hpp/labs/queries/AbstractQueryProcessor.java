@@ -18,6 +18,7 @@ import fr.tse.fi2.hpp.labs.beans.Route;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 import fr.tse.fi2.hpp.labs.dispatcher.StreamingDispatcher;
 import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
+import fr.tse.fi2.hpp.labs.queries.impl.projet.ThreadWrite;
 
 /**
  * Every query must extend this class that provides basic functionalities such
@@ -53,7 +54,7 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	 * Internal queue of events
 	 */
 	public final BlockingQueue<DebsRecord> eventqueue;
-	public final BlockingQueue<Float> listsum;
+	public final BlockingQueue<String> listsum;
 	/**
 	 * Global measurement
 	 */
@@ -72,8 +73,8 @@ public abstract class AbstractQueryProcessor implements Runnable {
 		// Initialize queue
 		this.eventqueue = new LinkedBlockingQueue<>();
 		this.listsum = new LinkedBlockingQueue<>();
-		//WriteQuery th1 = new WriteQuery(listsum,id);
-		//new Thread (th1). start ();
+		ThreadWrite th1 = new ThreadWrite(listsum,id);
+		new Thread (th1). start ();
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
@@ -209,20 +210,28 @@ public abstract class AbstractQueryProcessor implements Runnable {
 	/**
 	 * Poison pill has been received, close output
 	 */
+//	protected void finish() {
+//		// Close writer
+//		try {
+//			outputWriter.flush();
+//			outputWriter.close();
+//		} catch (IOException e) {
+//			logger.error("Cannot property close the output file for query "
+//					+ id, e);
+//		}
+//		// Notify finish time
+//		measure.notifyFinish(this.id);
+//		// Decrease latch count
+//		latch.countDown();
+//		//WriteQuery.poison(-1.0f);
+//	}
+	
 	protected void finish() {
-		// Close writer
-		try {
-			outputWriter.flush();
-			outputWriter.close();
-		} catch (IOException e) {
-			logger.error("Cannot property close the output file for query "
-					+ id, e);
-		}
 		// Notify finish time
 		measure.notifyFinish(this.id);
 		// Decrease latch count
 		latch.countDown();
-		//WriteQuery.poison(-1.0f);
+		listsum.add("FINISHED");
 	}
 
 }

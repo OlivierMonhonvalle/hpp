@@ -2,6 +2,7 @@ package fr.tse.fi2.hpp.labs.utils;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -22,6 +23,7 @@ import org.openjdk.jmh.annotations.Warmup;
 public class JHMMergeSort {
 
 	private int[] t; 
+
 	
 	@Setup
 	public void prepare(){
@@ -48,7 +50,11 @@ public class JHMMergeSort {
 	@Warmup(iterations=3)
 	@Measurement(iterations=3)
 	public boolean testMethod(){
-		MergeSortHome.jhmtest(t);
+		//MergeSortHome.jhmtest(t);
+		MergeSortPara tri1 = new MergeSortPara(t);
+		int cores = Runtime.getRuntime().availableProcessors();
+		ForkJoinPool forkJoinPool = new ForkJoinPool(cores);
+		forkJoinPool.invoke(tri1);
 		return true;
 	}
 	
