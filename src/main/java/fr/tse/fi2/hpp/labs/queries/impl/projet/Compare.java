@@ -26,6 +26,7 @@ public class Compare extends AbstractQueryProcessor {
 	@Override
 	protected void process(DebsRecord record) {
 		// TODO Auto-generated method stub
+		long start = System.nanoTime();
 		recs.add(record);
 		lastTime = record.getDropoff_datetime();
 		GetCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
@@ -33,16 +34,17 @@ public class Compare extends AbstractQueryProcessor {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}
-		prepareSortie();
-		System.out.println(Count(recsCell));
+		prepareSortie(start);
+		//System.out.println(Count(recsCell));
 		this.listsum.add(sortie);
 	}
 	
 	
-	public void prepareSortie(){
+	public void prepareSortie(long start){
 		Date dd = new Date(firstTime);
 		Date df = new Date(lastTime);
-		sortie = dd +" / "+ df;
+		long delay = System.nanoTime() - start;
+		sortie = dd +" , "+ df +" , " + delay ;
 	}
 
 	public static void GetCell(double pickup_longitude, double pickup_latitude,
@@ -79,19 +81,15 @@ public class Compare extends AbstractQueryProcessor {
 	public static Hashtable<ArrayList<Integer>, Integer> Count(
 			LinkedList<ArrayList<Integer>> recsCell2) {
 		Hashtable<ArrayList<Integer>, Integer> recsCellCount = new Hashtable<ArrayList<Integer>, Integer>();
-
 		for (int i = 0; i < recsCell2.size(); i++) {
 			if (recsCellCount.containsKey(recsCell2.get(i))) {
-				recsCellCount.put(recsCell2.get(i),
-						recsCellCount.get(recsCell2.get(i)) + 1);
+				recsCellCount.put(recsCell2.get(i),recsCellCount.get(recsCell2.get(i)) + 1);
 			}
 			else{
 				recsCellCount.put(recsCell2.get(i), 1);
 		}
 		}
-
 		return recsCellCount;
-
 	}
 
 }
