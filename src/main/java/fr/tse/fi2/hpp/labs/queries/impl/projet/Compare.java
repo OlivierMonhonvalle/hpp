@@ -1,10 +1,15 @@
 package fr.tse.fi2.hpp.labs.queries.impl.projet;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
@@ -34,17 +39,27 @@ public class Compare extends AbstractQueryProcessor {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}
-		prepareSortie(start);
-		//System.out.println(Count(recsCell));
+		prepareSortie(start, Count(recsCell));
 		this.listsum.add(sortie);
 	}
 	
 	
-	public void prepareSortie(long start){
+	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list){
 		Date dd = new Date(firstTime);
 		Date df = new Date(lastTime);
 		long delay = System.nanoTime() - start;
-		sortie = dd +" , "+ df +" , " + delay ;
+		String toutepourrie = "";
+		int taille = list.size();
+		if (taille > 10){
+			for (int j = 10; j < taille; j++){
+				list.remove(10);
+			}
+		}
+		
+		for (int k = 0; k < 10 - taille ; k++){
+			toutepourrie += " , NULL";
+		}
+		sortie = dd +" , "+ df + list + toutepourrie + " , " + delay ;
 	}
 
 	public static void GetCell(double pickup_longitude, double pickup_latitude,
@@ -78,18 +93,48 @@ public class Compare extends AbstractQueryProcessor {
 		recsCell.add(recCell);
 	}
 	
-	public static Hashtable<ArrayList<Integer>, Integer> Count(
+	public static ArrayList<ArrayList<Integer>> Count(
 			LinkedList<ArrayList<Integer>> recsCell2) {
-		Hashtable<ArrayList<Integer>, Integer> recsCellCount = new Hashtable<ArrayList<Integer>, Integer>();
+		
+		HashMap<ArrayList<Integer>, Integer> recsCellCount = new HashMap<ArrayList<Integer>, Integer>();
+		ValueComparator bvc =  new ValueComparator(recsCellCount);
+		TreeMap<ArrayList<Integer>, Integer> sorted_map = new TreeMap<ArrayList<Integer>, Integer>(bvc);
+		
 		for (int i = 0; i < recsCell2.size(); i++) {
 			if (recsCellCount.containsKey(recsCell2.get(i))) {
-				recsCellCount.put(recsCell2.get(i),recsCellCount.get(recsCell2.get(i)) + 1);
-			}
-			else{
+				recsCellCount.put(recsCell2.get(i),
+						recsCellCount.get(recsCell2.get(i)) + 1);
+			} else {
 				recsCellCount.put(recsCell2.get(i), 1);
+			}
 		}
-		}
-		return recsCellCount;
-	}
 
+		sorted_map.putAll(recsCellCount);
+
+		ArrayList<ArrayList<Integer>> sorted_List = new ArrayList<>();
+			for (ArrayList<Integer> key : sorted_map.keySet()) {
+				sorted_List.add(key);
+		}
+			return sorted_List;
+	}
+	
+	static class ValueComparator implements Comparator<ArrayList<Integer>> {
+
+	    Map<ArrayList<Integer>, Integer> base;
+	    public ValueComparator(HashMap<ArrayList<Integer>, Integer> recsCellCount) {
+	        this.base = recsCellCount;
+	    }
+
+		@Override
+		public int compare(ArrayList o1, ArrayList o2) {
+			// TODO Auto-generated method stub
+	        if (base.get(o1) >= base.get(o2)) {
+	            return -1;
+	        } else {
+	            return 1;
+	        } // returning 0 would merge keys
+		}
+	}
 }
+
+
