@@ -1,13 +1,11 @@
 package fr.tse.fi2.hpp.labs.queries.impl.projet;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -15,7 +13,8 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
-public class Compare extends AbstractQueryProcessor {
+public class Query1 extends AbstractQueryProcessor {
+
 
 	// Tableau contenant tous les debsRecord des 30 dernières minutes
 	private static LinkedList<DebsRecord> recs = new LinkedList<>();
@@ -29,7 +28,7 @@ public class Compare extends AbstractQueryProcessor {
 	private String sortie;
 
 	
-	public Compare(QueryProcessorMeasure measure) {
+	public Query1(QueryProcessorMeasure measure) {
 		super(measure);
 		// TODO Auto-generated constructor stub
 	}
@@ -43,7 +42,8 @@ public class Compare extends AbstractQueryProcessor {
 		recs.add(record);
 		lastTime = record.getDropoff_datetime();
 		getCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
-		while ((lastTime - recs.getFirst().getDropoff_datetime()) / 60000 > 30) {
+		firstTime = recs.getFirst().getDropoff_datetime();
+		while ((lastTime - firstTime) / 60000 > 30) {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}
@@ -68,7 +68,8 @@ public class Compare extends AbstractQueryProcessor {
 		for (int k = 0; k < 10 - taille ; k++){
 			listnull += " , NULL";
 		}
-		sortie = dd +" , "+ df + list + listnull + " , " + delay ;
+		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) +" , "
+		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + list + listnull + " , " + delay ;
 	}
 	
 	// Fonction transformant les coordonnées des DepsRecords en coordonnée cellulaire
@@ -83,24 +84,20 @@ public class Compare extends AbstractQueryProcessor {
 		ArrayList<Integer> recCell = new ArrayList<>();
 		double a = pickup_longitude + 74.913585 + 0.005986 / 2;
 		double xDepDouble = a / 0.005986;
-		int xDep = (int) xDepDouble + 1;
+		recCell.add((int) xDepDouble + 1);
 
 		a = -(pickup_latitude - 41.474937 - 0.004491556 / 2);
 		double yDepDouble = a / 0.004491556;
-		int yDep = (int) yDepDouble + 1;
+		recCell.add((int) yDepDouble + 1);
 
 		a = dropoff_longitude + 74.913585 + 0.005986 / 2;
 		double xArrDouble = a / 0.005986;
-		int xArr = (int) xArrDouble + 1;
+		recCell.add((int) xArrDouble + 1);
 
 		a = -(dropoff_latitude - 41.474937 - 0.004491556 / 2);
 		double yArrDouble = a / 0.004491556;
-		int yArr = (int) yArrDouble + 1;
+		recCell.add((int) yArrDouble + 1);
 		
-		recCell.add(xDep);
-		recCell.add(yDep);
-		recCell.add(xArr);
-		recCell.add(yArr);
 		recsCell.add(recCell);
 	}
 	

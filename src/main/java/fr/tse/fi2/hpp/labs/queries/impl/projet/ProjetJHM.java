@@ -1,10 +1,21 @@
-package fr.tse.fi2.hpp.labs.main;
+package fr.tse.fi2.hpp.labs.queries.impl.projet;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Fork;
+import org.openjdk.jmh.annotations.Measurement;
+import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.Warmup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,12 +23,6 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 import fr.tse.fi2.hpp.labs.dispatcher.LoadFirstDispatcher;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
-import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
-import fr.tse.fi2.hpp.labs.queries.impl.lab1.SumQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab4.RouteMembershipProcessor;
-import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterGuava;
-import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterHash;
 import fr.tse.fi2.hpp.labs.queries.impl.projet.Query1;
 
 /**
@@ -29,10 +34,12 @@ import fr.tse.fi2.hpp.labs.queries.impl.projet.Query1;
  * @author Julien
  * 
  */
-public class MainNonStreaming {
+
+@State(Scope.Thread)
+public class ProjetJHM {
 
 	final static Logger logger = LoggerFactory
-			.getLogger(MainNonStreaming.class);
+			.getLogger(ProjetJHM.class);
     //private static BloomFilterHash q;
 	private static Query1 q;
     private DebsRecord r;
@@ -41,7 +48,13 @@ public class MainNonStreaming {
 	 * @throws IOException
 	 */
 	
-	public static void main(String[] args) throws IOException {
+	@Benchmark
+	@BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
+	@Fork(1)
+	@Warmup(iterations=5)
+	@Measurement(iterations=5)
+	public static void main() throws IOException {
 		// Init query time measure
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
 		// Init dispatcher and load everything
@@ -78,20 +91,8 @@ public class MainNonStreaming {
 		} catch (InterruptedException e) {
 			logger.error("Error while waiting for the program to end", e);
 		}
-		// Output measure and ratio per query processor
-		measure.setProcessedRecords(dispatch.getRecords());
-		measure.outputMeasure();
-		//Compare.tabmin();
-//		String l1= "FF965116CF16F832F2C7F940F16746E5";
-//		float x1 = (float) -73.98093;
-//		float y1= (float) 40.779877;
-//		float x2= (float) -73.96889;
-//		float y2= (float) 40.788452f;
-//		DebsRecord testF = new DebsRecord("", "", 4, 4, 4, 4, 4, 4, 4, 4, "", 4, 4, 4, 4, 4, 4, false);
-//		DebsRecord testV = new DebsRecord("", l1, 4, 4, 4, 4, x1, y1, x2, y2, "", 4, 4, 4, 4, 4, 4, false);
-//		
-//		System.out.println("Route  : " + BloomFilterGuava.check(testV));
-//		System.out.println("Route  : " + BloomFilterGuava.check(testF));
 	}
+	
+
 
 }
