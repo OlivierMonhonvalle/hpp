@@ -17,17 +17,25 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 public class Compare extends AbstractQueryProcessor {
 
+	// Tableau contenant tous les debsRecord des 30 dernières minutes
 	private static LinkedList<DebsRecord> recs = new LinkedList<>();
+	// Tableau contenant tous les cellules des debsRecord des 30 dernières minutes
 	private static LinkedList<ArrayList<Integer>> recsCell = new LinkedList<>();
+	// Première date des DebsRecord présent dans recs
 	private static long firstTime;
+	// Dernière date des DebsRecord présent dans recs
 	private static long lastTime;
+	// Valeur ecrite dans le fichier 
 	private String sortie;
 
+	
 	public Compare(QueryProcessorMeasure measure) {
 		super(measure);
 		// TODO Auto-generated constructor stub
 	}
 
+	// Fonction permettant de recuperer toutes les DebsRecord ayant eu lieu les 30 dernieres minutes
+	
 	@Override
 	protected void process(DebsRecord record) {
 		// TODO Auto-generated method stub
@@ -40,27 +48,30 @@ public class Compare extends AbstractQueryProcessor {
 			recsCell.removeFirst();
 		}
 		prepareSortie(start, Count(recsCell));
+		// écriture de la sortie dans un Thread
 		this.listsum.add(sortie);
 	}
 	
+	// Fonction permettant de préparer l'écriture de la sortie
 	
 	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list){
 		Date dd = new Date(firstTime);
 		Date df = new Date(lastTime);
 		long delay = System.nanoTime() - start;
-		String toutepourrie = "";
+		String listnull = "";
 		int taille = list.size();
 		if (taille > 10){
 			for (int j = 10; j < taille; j++){
 				list.remove(10);
 			}
 		}
-		
 		for (int k = 0; k < 10 - taille ; k++){
-			toutepourrie += " , NULL";
+			listnull += " , NULL";
 		}
-		sortie = dd +" , "+ df + list + toutepourrie + " , " + delay ;
+		sortie = dd +" , "+ df + list + listnull + " , " + delay ;
 	}
+	
+	// Fonction transformant les coordonnées des DepsRecords en coordonnée cellulaire
 
 	public static void GetCell(double pickup_longitude, double pickup_latitude,
 			double dropoff_longitude, double dropoff_latitude) {
@@ -93,6 +104,8 @@ public class Compare extends AbstractQueryProcessor {
 		recsCell.add(recCell);
 	}
 	
+	// Fonction permettant de compter le nombre de Taxis faisant le même parcours
+	
 	public static ArrayList<ArrayList<Integer>> Count(
 			LinkedList<ArrayList<Integer>> recsCell2) {
 		
@@ -108,7 +121,6 @@ public class Compare extends AbstractQueryProcessor {
 				recsCellCount.put(recsCell2.get(i), 1);
 			}
 		}
-
 		sorted_map.putAll(recsCellCount);
 
 		ArrayList<ArrayList<Integer>> sorted_List = new ArrayList<>();
@@ -117,6 +129,8 @@ public class Compare extends AbstractQueryProcessor {
 		}
 			return sorted_List;
 	}
+	
+	// Fonction permettant de classer les routes de la plus fréquentée à la moins fréquentée
 	
 	static class ValueComparator implements Comparator<ArrayList<Integer>> {
 
@@ -132,7 +146,7 @@ public class Compare extends AbstractQueryProcessor {
 	            return -1;
 	        } else {
 	            return 1;
-	        } // returning 0 would merge keys
+	        }
 		}
 	}
 }
