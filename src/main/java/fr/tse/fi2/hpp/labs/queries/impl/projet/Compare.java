@@ -42,12 +42,12 @@ public class Compare extends AbstractQueryProcessor {
 		long start = System.nanoTime();
 		recs.add(record);
 		lastTime = record.getDropoff_datetime();
-		GetCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
+		getCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
 		while ((lastTime - recs.getFirst().getDropoff_datetime()) / 60000 > 30) {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}
-		prepareSortie(start, Count(recsCell));
+		prepareSortie(start, count(recsCell));
 		// écriture de la sortie dans un Thread
 		this.listsum.add(sortie);
 	}
@@ -73,7 +73,7 @@ public class Compare extends AbstractQueryProcessor {
 	
 	// Fonction transformant les coordonnées des DepsRecords en coordonnée cellulaire
 
-	public static void GetCell(double pickup_longitude, double pickup_latitude,
+	public static void getCell(double pickup_longitude, double pickup_latitude,
 			double dropoff_longitude, double dropoff_latitude) {
 		/*
 		 * Le grille fait 300 case x 300 cases. Chaque case fait 500m x 500m
@@ -106,7 +106,7 @@ public class Compare extends AbstractQueryProcessor {
 	
 	// Fonction permettant de compter le nombre de Taxis faisant le même parcours
 	
-	public static ArrayList<ArrayList<Integer>> Count(
+	public static ArrayList<ArrayList<Integer>> count(
 			LinkedList<ArrayList<Integer>> recsCell2) {
 		
 		HashMap<ArrayList<Integer>, Integer> recsCellCount = new HashMap<ArrayList<Integer>, Integer>();
