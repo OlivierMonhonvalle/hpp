@@ -43,7 +43,7 @@ public class Query1 extends AbstractQueryProcessor {
 		lastTime = record.getDropoff_datetime();
 		getCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
 		firstTime = recs.getFirst().getDropoff_datetime();
-		while ((lastTime - firstTime) / 60000 > 30) {
+		while ((lastTime - recs.getFirst().getDropoff_datetime()) / 60000 > 30) {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}

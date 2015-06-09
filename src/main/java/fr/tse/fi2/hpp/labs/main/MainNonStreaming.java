@@ -19,6 +19,7 @@ import fr.tse.fi2.hpp.labs.queries.impl.lab4.RouteMembershipProcessor;
 import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterGuava;
 import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterHash;
 import fr.tse.fi2.hpp.labs.queries.impl.projet.Query1;
+import fr.tse.fi2.hpp.labs.queries.impl.projet.Query2;
 
 /**
  * Main class of the program. Register your new queries here
@@ -34,7 +35,7 @@ public class MainNonStreaming {
 	final static Logger logger = LoggerFactory
 			.getLogger(MainNonStreaming.class);
     //private static BloomFilterHash q;
-	private static Query1 q;
+	private static Query2 q;
     private DebsRecord r;
 	/**
 	 * @param args
@@ -46,12 +47,12 @@ public class MainNonStreaming {
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
 		// Init dispatcher and load everything
 		LoadFirstDispatcher dispatch = new LoadFirstDispatcher(
-				"src/main/resources/data/test_02.csv");
+				"src/main/resources/data/test_01.csv");
 		logger.info("Finished parsing");
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
-		q = new Query1(measure);
+		q = new Query2(measure);
 		processors.add(q);
 		//processors.add(new SumQuery(measure));
 		// Register query processors
