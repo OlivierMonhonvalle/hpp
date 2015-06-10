@@ -31,7 +31,7 @@ public class ThreadWrite implements Runnable {
 		// Initialize writer
 		try {
 			outputWriter = new BufferedWriter(new FileWriter(new File(
-					"result/DebsReccordsQuery" + id + ".txt")));
+					"result/DebsRecordsQuery" + id + ".txt")));
 		} catch (IOException e) {
 			logger.error("Cannot open output file for " + id, e);
 			System.exit(-1);
