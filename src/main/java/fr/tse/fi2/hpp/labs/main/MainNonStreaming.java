@@ -35,7 +35,7 @@ public class MainNonStreaming {
 	final static Logger logger = LoggerFactory
 			.getLogger(MainNonStreaming.class);
     //private static BloomFilterHash q;
-	private static Query2 q;
+	private static Query1 q;
     private DebsRecord r;
 	/**
 	 * @param args
@@ -47,12 +47,12 @@ public class MainNonStreaming {
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
 		// Init dispatcher and load everything
 		LoadFirstDispatcher dispatch = new LoadFirstDispatcher(
-				"src/main/resources/data/100k.csv");
+				"src/main/resources/data/test_01.csv");
 		logger.info("Finished parsing");
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
-		q = new Query2(measure);
+		q = new Query1(measure);
 		processors.add(q);
 		//processors.add(new SumQuery(measure));
 		// Register query processors
