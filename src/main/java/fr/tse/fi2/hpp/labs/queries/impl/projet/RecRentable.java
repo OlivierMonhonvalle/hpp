@@ -69,7 +69,11 @@ public class RecRentable implements Comparable<RecRentable> {
 	}
 
 	public String toString() {
-		return "x=" + x + ", y=" + y + ", taxiVide=" + taxiVide + ", mediane=" + mediane + ", profit=" + profit;
+		return x + "." + y + "," + taxiVide + "," + mediane + "," + profit;
+	}
+	
+	public String affiche() {
+		return x + "." + y + "," + taxiVide + "," + mediane + "," + profit;
 	}
 
 	@Override
@@ -82,57 +86,5 @@ public class RecRentable implements Comparable<RecRentable> {
 	    if (this.getProfit() < a.getProfit()) return AFTER;
 	    if (this.getProfit() > a.getProfit()) return BEFORE;
 		return 0;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((fares == null) ? 0 : fares.hashCode());
-		result = prime * result + ((iDs == null) ? 0 : iDs.hashCode());
-		result = prime * result + ((mediane == null) ? 0 : mediane.hashCode());
-		result = prime * result + ((profit == null) ? 0 : profit.hashCode());
-		result = prime * result + taxiVide;
-		result = prime * result + x;
-		result = prime * result + y;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RecRentable other = (RecRentable) obj;
-		if (fares == null) {
-			if (other.fares != null)
-				return false;
-		} else if (!fares.equals(other.fares))
-			return false;
-		if (iDs == null) {
-			if (other.iDs != null)
-				return false;
-		} else if (!iDs.equals(other.iDs))
-			return false;
-		if (mediane == null) {
-			if (other.mediane != null)
-				return false;
-		} else if (!mediane.equals(other.mediane))
-			return false;
-		if (profit == null) {
-			if (other.profit != null)
-				return false;
-		} else if (!profit.equals(other.profit))
-			return false;
-		if (taxiVide != other.taxiVide)
-			return false;
-		if (x != other.x)
-			return false;
-		if (y != other.y)
-			return false;
-		return true;
 	}
 }

@@ -41,7 +41,7 @@ public class ProjetJHM {
 	final static Logger logger = LoggerFactory
 			.getLogger(ProjetJHM.class);
     //private static BloomFilterHash q;
-	private static Query1 q;
+	private static Query2 q;
     private DebsRecord r;
 	/**
 	 * @param args
@@ -50,21 +50,21 @@ public class ProjetJHM {
 	
 	@Benchmark
 	@BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
+    @OutputTimeUnit(TimeUnit.SECONDS)
 	@Fork(1)
-	@Warmup(iterations=5)
-	@Measurement(iterations=5)
+	@Warmup(iterations=1)
+	@Measurement(iterations=1)
 	public static void main() throws IOException {
 		// Init query time measure
 		QueryProcessorMeasure measure = new QueryProcessorMeasure();
 		// Init dispatcher and load everything
 		LoadFirstDispatcher dispatch = new LoadFirstDispatcher(
-				"src/main/resources/data/test_02.csv");
+				"src/main/resources/data/100k.csv");
 		logger.info("Finished parsing");
 		// Query processors
 		List<AbstractQueryProcessor> processors = new ArrayList<>();
 		// Add you query processor here
-		q = new Query1(measure);
+		q = new Query2(measure);
 		processors.add(q);
 		//processors.add(new SumQuery(measure));
 		// Register query processors
