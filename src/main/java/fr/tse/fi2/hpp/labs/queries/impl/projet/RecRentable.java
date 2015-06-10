@@ -49,8 +49,8 @@ public void setProfit(Double profit) {
 
 @Override
 public String toString() {
-	return "RecRentable [x=" + x + ", y=" + y + ", taxiVide=" + taxiVide
-			+ ", fares=" + fares + ", mediane=" + mediane + ", profit="
-			+ profit + "]";
+	return "x=" + x + ", y=" + y + ", taxiVide=" + taxiVide + ", mediane=" + mediane + ", profit="+ profit;
 }
+
+
 }

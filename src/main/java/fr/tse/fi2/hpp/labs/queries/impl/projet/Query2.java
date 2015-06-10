@@ -67,6 +67,9 @@ public class Query2 extends AbstractQueryProcessor {
 		Date df = new Date(lastTime);
 		long delay = System.nanoTime() - start;
 		String listnull = "";
+		for (int i=0; i < recsRentablef.size(); i++){
+			
+		}
 		int taille = recsRentablef.size();
 		if (taille > 10){
 			for (int j = 10; j < taille; j++){
@@ -77,7 +80,7 @@ public class Query2 extends AbstractQueryProcessor {
 			listnull += " , NULL";
 		}
 		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) +" , "
-		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + recsRentablef + listnull + " , " + delay ;
+		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + recsRentablef.toString() + listnull + " , " + delay ;
 	}
 
 	private void majRecsRentable() {
@@ -151,9 +154,7 @@ public class Query2 extends AbstractQueryProcessor {
 										.getFares()
 										.get(recsRentable.get(i).getFares()
 												.size() / 2));
-				System.out.println(recsRentable.get(i).getX() + " "
-						+ recsRentable.get(i).getY() + " Mediane : "
-						+ recsRentable.get(i).getMediane());
+				//System.out.println(recsRentable.get(i).getX() + " "+ recsRentable.get(i).getY() + " Mediane : "+ recsRentable.get(i).getMediane());
 			}
 		}
 
@@ -165,7 +166,7 @@ public class Query2 extends AbstractQueryProcessor {
 			recRentable.setY(arrY);
 			recRentable.setTaxiVide(1);
 			recsRentable.add(recRentable);
-			System.out.println("creation cellule arrivé : " + recRentable);
+			//System.out.println("creation cellule arrivé : " + recRentable);
 		}
 
 		if (celluleDep_existe == false) {
@@ -182,7 +183,7 @@ public class Query2 extends AbstractQueryProcessor {
 			recRentable.setProfit(recRentable.getMediane()
 					/ recRentable.getTaxiVide());
 			recsRentable.add(recRentable);
-			System.out.println("creation cellule départ : " + recRentable);
+			//System.out.println("creation cellule départ : " + recRentable);
 		}
 
 		// BARRIERE DE BUG
