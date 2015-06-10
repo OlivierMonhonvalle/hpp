@@ -42,11 +42,12 @@ public class Query1 extends AbstractQueryProcessor {
 		recs.add(record);
 		lastTime = record.getDropoff_datetime();
 		getCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
-		firstTime = recs.getFirst().getDropoff_datetime();
 		while ((lastTime - recs.getFirst().getDropoff_datetime()) / 60000 > 30) {
 			recs.removeFirst();
 			recsCell.removeFirst();
 		}
+		firstTime = recs.getFirst().getDropoff_datetime();
+		
 		prepareSortie(start, count(recsCell));
 		// écriture de la sortie dans un Thread
 		this.listsum.add(sortie);

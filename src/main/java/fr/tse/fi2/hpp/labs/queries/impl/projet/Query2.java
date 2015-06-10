@@ -46,11 +46,11 @@ public class Query2 extends AbstractQueryProcessor {
 		lastTime = record.getDropoff_datetime();
 		deletedRecs15.clear();
 		deletedRecs30.clear();
-		firstTime15 = recs15.getFirst().getDropoff_datetime();
 		while ((lastTime - recs15.getFirst().getDropoff_datetime()) / 60000 > 15) {
 			deletedRecs15.add(recs15.getFirst());
 			recs15.removeFirst();
 		}
+		firstTime15 = recs15.getFirst().getDropoff_datetime();
 
 		while ((lastTime - recs30.getFirst().getDropoff_datetime()) / 60000 > 30) {
 			deletedRecs30.add(recs30.getFirst());

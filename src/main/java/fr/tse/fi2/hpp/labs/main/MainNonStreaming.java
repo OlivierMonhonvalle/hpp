@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-
-import org.bouncycastle.util.Integers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,14 +11,7 @@ import fr.tse.fi2.hpp.labs.beans.DebsRecord;
 import fr.tse.fi2.hpp.labs.beans.measure.QueryProcessorMeasure;
 import fr.tse.fi2.hpp.labs.dispatcher.LoadFirstDispatcher;
 import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
-import fr.tse.fi2.hpp.labs.queries.impl.SimpleQuerySumEvent;
-import fr.tse.fi2.hpp.labs.queries.impl.lab1.SumQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab2.WriteQuery;
-import fr.tse.fi2.hpp.labs.queries.impl.lab4.RouteMembershipProcessor;
-import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterGuava;
-import fr.tse.fi2.hpp.labs.queries.impl.lab5.BloomFilterHash;
 import fr.tse.fi2.hpp.labs.queries.impl.projet.Query1;
-import fr.tse.fi2.hpp.labs.queries.impl.projet.Query2;
 
 /**
  * Main class of the program. Register your new queries here
