@@ -46,7 +46,7 @@ public class Query2 extends AbstractQueryProcessor {
 		lastTime = record.getDropoff_datetime();
 		deletedRecs15.clear();
 		deletedRecs30.clear();
-		firstTime15 = recs15.getFirst().getDropoff_datetime();
+		
 		while ((lastTime - recs15.getFirst().getDropoff_datetime()) / 60000 > 15) {
 			deletedRecs15.add(recs15.getFirst());
 			recs15.removeFirst();
@@ -56,7 +56,7 @@ public class Query2 extends AbstractQueryProcessor {
 			deletedRecs30.add(recs30.getFirst());
 			recs30.removeFirst();
 		}
-
+		firstTime15 = recs15.getFirst().getDropoff_datetime();
 		majRecsRentable();
 		prepareSortie(start, recsRentable);
 		// System.out.println(recsRentable.toString());
@@ -244,22 +244,11 @@ public class Query2 extends AbstractQueryProcessor {
 		double pickup_latitude = record.getPickup_latitude();
 		double dropoff_longitude = record.getDropoff_longitude();
 		double dropoff_latitude = record.getDropoff_latitude();
-
-		double a = pickup_longitude + 74.913585 + 0.005986 / 4;
-		double xDepDouble = a / 0.002993;
-		depX = (int) xDepDouble + 1;
-
-		a = -(pickup_latitude - 41.474937 - 0.004491556 / 4);
-		double yDepDouble = a / 0.002245778;
-		depY = (int) yDepDouble + 1;
-
-		a = dropoff_longitude + 74.913585 + 0.005986 / 4;
-		double xArrDouble = a / 0.002993;
-		arrX = (int) xArrDouble + 1;
-
-		a = -(dropoff_latitude - 41.474937 - 0.004491556 / 4);
-		double yArrDouble = a / 0.002245778;
-		arrY = (int) yArrDouble + 1;
+		
+		depX = ((int) ((pickup_longitude + 74.913585 + 0.005986 / 4)/ 0.002993 + 1));
+		depY = ((int) ((-(pickup_latitude - 41.474937 - 0.004491556 / 4))/ 0.002245778 + 1));
+		arrX = ((int) ((dropoff_longitude + 74.913585 + 0.005986 / 4)/ 0.002993 + 1));
+		arrY = ((int) ((-(dropoff_latitude - 41.474937 - 0.004491556 / 4))/ 0.002245778 + 1));
 	}
 
 	public static int getProfit(LinkedList<DebsRecord> allRecs, int x, int y) {
