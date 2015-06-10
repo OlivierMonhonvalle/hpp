@@ -1,7 +1,8 @@
 package fr.tse.fi2.hpp.labs.queries.impl.projet;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -47,7 +48,7 @@ public class Query2 extends AbstractQueryProcessor {
 		deletedRecs30.clear();
 		firstTime15 = recs15.getFirst().getDropoff_datetime();
 		while ((lastTime - recs15.getFirst().getDropoff_datetime()) / 60000 > 15) {
-		    deletedRecs15.add(recs15.getFirst());
+			deletedRecs15.add(recs15.getFirst());
 			recs15.removeFirst();
 		}
 
@@ -61,26 +62,26 @@ public class Query2 extends AbstractQueryProcessor {
 		// System.out.println(recsRentable.toString());
 		this.listsum.add(sortie);
 	}
-	
-	public void prepareSortie(long start, LinkedList<RecRentable> recsRentablef){
+
+	public void prepareSortie(long start, LinkedList<RecRentable> recsRentablef) {
 		Date dd = new Date(firstTime15);
 		Date df = new Date(lastTime);
-		long delay = System.nanoTime() - start;
 		String listnull = "";
-		for (int i=0; i < recsRentablef.size(); i++){
-			
-		}
+		//System.out.println(recsRentablef.toString());
+		Collections.sort(recsRentablef);
+		
 		int taille = recsRentablef.size();
-		if (taille > 10){
-			for (int j = 10; j < taille; j++){
+		if (taille > 10) {
+			for (int j = 10; j < taille; j++) {
 				recsRentablef.remove(10);
 			}
 		}
-		for (int k = 0; k < 10 - taille ; k++){
+		for (int k = 0; k < 10 - taille; k++) {
 			listnull += " , NULL";
 		}
-		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) +" , "
-		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + recsRentablef.toString() + listnull + " , " + delay ;
+		long delay = System.nanoTime() - start;
+		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) + " , " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + recsRentablef.toString() + listnull
+				+ " , " + delay;
 	}
 
 	private void majRecsRentable() {
@@ -95,42 +96,29 @@ public class Query2 extends AbstractQueryProcessor {
 		for (int i = 0; i < recsRentable.size(); i++) {
 			// Pour toutes les cellules déjà connues
 			// System.out.println("arrX : " + arrX + " arrY : " + arrY);
-			if (recsRentable.get(i).getX() == arrX
-					&& recsRentable.get(i).getY() == arrY) {
+			if (recsRentable.get(i).getX() == arrX && recsRentable.get(i).getY() == arrY) {
 				// Si un taxi est déjà arriver dans cette cellule
 				// System.out.println("MAJ cellule arriver");
-				recsRentable.get(i).setTaxiVide(
-						recsRentable.get(i).getTaxiVide() + 1); // On incrémente
-																// le nombre de
-																// taxi vide
+				if (!(recsRentable.get(i).getiDs().contains(recs30.getLast().getHack_license()))) {
+					recsRentable.get(i).setTaxiVide(recsRentable.get(i).getTaxiVide() + 1);
+					recsRentable.get(i).getiDs().add(recs30.getLast().getHack_license());
+				}
+				recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
 				// System.out.println("Taxi vide : " +
 				// recsRentable.get(i).getTaxiVide());
-				recsRentable.get(i).setProfit(
-						recsRentable.get(i).getMediane()
-								/ recsRentable.get(i).getTaxiVide()); // On
-																		// calcule
-																		// le
-																		// profit
+				recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
+				// On calcule le profit
 				celluleArriv_existe = true;
 			}
-			if (recsRentable.get(i).getX() == depX
-					&& recsRentable.get(i).getY() == depY) {
+			if (recsRentable.get(i).getX() == depX && recsRentable.get(i).getY() == depY) {
 				// Si un taxi est déjà partie de cette cellule
 				for (int j = 0; j < recsRentable.get(i).getFares().size(); j++) {
 					// Pour tous les tarifs payé dans cette cellule
 					// On les trie au fur et à mesure
-					if (recs30.getLast().getFare_amount()
-							+ recs30.getLast().getTip_amount() < recsRentable
-							.get(i).getFares().get(j)) {
+					if (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount() < recsRentable.get(i).getFares().get(j)) {
 						// Si le tarifs est plus petit qu'un tarif déjà existant
 						// on l'insert juste avant lui
-						recsRentable
-								.get(i)
-								.getFares()
-								.add(j,
-										(double) (recs30.getLast()
-												.getFare_amount() + recs30
-												.getLast().getTip_amount()));
+						recsRentable.get(i).getFares().add(j, (double) (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount()));
 						celluleDep_existe = true;
 						jeSuisLePlusGrand = false;
 						break;
@@ -140,21 +128,14 @@ public class Query2 extends AbstractQueryProcessor {
 				if (jeSuisLePlusGrand == true) {
 					// Si le tarif est le plus grand trouvé jusqu'à présent on
 					// le met à la fin
-					recsRentable
-							.get(i)
-							.getFares()
-							.add((double) (recs30.getLast().getFare_amount() + recs30
-									.getLast().getTip_amount()));
+					recsRentable.get(i).getFares().add((double) (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount()));
 					celluleDep_existe = true;
 				}
-				recsRentable.get(i)
-						.setMediane(
-								recsRentable
-										.get(i)
-										.getFares()
-										.get(recsRentable.get(i).getFares()
-												.size() / 2));
-				//System.out.println(recsRentable.get(i).getX() + " "+ recsRentable.get(i).getY() + " Mediane : "+ recsRentable.get(i).getMediane());
+				recsRentable.get(i).setMediane(recsRentable.get(i).getFares().get(recsRentable.get(i).getFares().size() / 2));
+				//System.out.println(recsRentable.get(i).getX() + " " + recsRentable.get(i).getY() + " Mediane : " + recsRentable.get(i).getMediane());
+				if (!(recsRentable.get(i).getTaxiVide() == 0)) {
+					recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
+				}
 			}
 		}
 
@@ -164,6 +145,7 @@ public class Query2 extends AbstractQueryProcessor {
 			RecRentable recRentable = new RecRentable();
 			recRentable.setX(arrX);
 			recRentable.setY(arrY);
+			recRentable.getiDs().add(recs30.getLast().getHack_license());
 			recRentable.setTaxiVide(1);
 			recsRentable.add(recRentable);
 			//System.out.println("creation cellule arrivé : " + recRentable);
@@ -175,70 +157,76 @@ public class Query2 extends AbstractQueryProcessor {
 			RecRentable recRentable = new RecRentable();
 			recRentable.setX(depX);
 			recRentable.setY(depY);
-			recRentable.getFares().add(
-					(double) (recs30.getLast().getFare_amount() + recs30
-							.getLast().getTip_amount()));
-			recRentable.setMediane(recRentable.getFares().get(
-					recRentable.getFares().size() / 2));
-			recRentable.setProfit(recRentable.getMediane()
-					/ recRentable.getTaxiVide());
+			recRentable.getFares().add((double) (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount()));
+			recRentable.setMediane(recRentable.getFares().get(recRentable.getFares().size() / 2));
+			recRentable.setProfit(recRentable.getMediane() / recRentable.getTaxiVide());
 			recsRentable.add(recRentable);
 			//System.out.println("creation cellule départ : " + recRentable);
 		}
-
-		// BARRIERE DE BUG
-
 		// modification due aux supppressions des taxi -30 min
 		for (int i = 0; i < deletedRecs30.size(); i++) {
 			getCell(deletedRecs30.get(i));
+			// comparaison à toute les cellules exisatantes.
 			for (int j = 0; j < recsRentable.size(); j++) {
 				if (recsRentable.get(j).getX() == arrX && recsRentable.get(j).getY() == arrY) {
-					recsRentable.get(j).setTaxiVide(recsRentable.get(j).getTaxiVide() - 1);
+					// on supprime un taxi vide si besoin
+					if ((recsRentable.get(j).getiDs().contains(recs30.get(i).getHack_license()))) {
+						recsRentable.get(j).setTaxiVide(recsRentable.get(j).getTaxiVide() - 1);
+						recsRentable.get(i).getiDs().remove(recs30.getLast().getHack_license());
+					}
+					// suppression de la case si elle est vide
 					if (recsRentable.get(j).getMediane() == 0 && recsRentable.get(j).getTaxiVide() == 0) {
 						recsRentable.remove(j);
 						j--;
+						// sinon recalcul du profit (si possible)
 					} else if (!(recsRentable.get(j).getTaxiVide() == 0)) {
-						recsRentable.get(j).setProfit(recsRentable.get(j).getMediane()/ recsRentable.get(j).getTaxiVide());
-					} else {
-						recsRentable.get(j).setProfit(null);
+						recsRentable.get(j).setProfit(recsRentable.get(j).getMediane() / recsRentable.get(j).getTaxiVide());
+					}
+					// pas de calcul de profit si nm de taxi vide=0
+					else {
+						recsRentable.get(j).setProfit(0.0);
 					}
 					break;
 				}
 			}
+
 		}
 
-		// modification dues aux supppressions des taxi -30 min à 15min
+		// modification dues aux supppressions des taxi -15min
 
 		for (int i = 0; i < deletedRecs15.size(); i++) {
 			getCell(deletedRecs15.get(i));
-			for (int j = 0; j < recsRentable.size(); j++) {
-				if (recsRentable.get(j).getX() == arrX && recsRentable.get(j).getY() == arrY) {
-					recsRentable.get(j).setTaxiVide(recsRentable.get(j).getTaxiVide() - 1);
-					if (recsRentable.get(j).getMediane() == 0 && recsRentable.get(j).getTaxiVide() == 0) {
-						recsRentable.remove(j);
-						j--;
-					} else {
-						recsRentable.get(j).setProfit(recsRentable.get(j).getMediane() / recsRentable.get(j).getTaxiVide());
-					}
-					break;
-				}
-			}
 
+			// on les compare à chaque élément du tableau
 			for (int j = 0; j < recsRentable.size(); j++) {
 				if (recsRentable.get(j).getX() == depX && recsRentable.get(j).getY() == depY) {
+					// suppression du fare correspondant au taxi
 					for (int k = 0; k < recsRentable.get(j).getFares().size(); k++) {
 						if (deletedRecs15.get(i).getFare_amount() + deletedRecs15.get(i).getTip_amount() == recsRentable.get(j).getFares().get(k)) {
 							recsRentable.get(j).getFares().remove(k);
-							recsRentable.get(j).setMediane(recsRentable.get(j).getFares().get(recsRentable.get(j).getFares().size() / 2));
-							if (recsRentable.get(j).getMediane() == 0 && recsRentable.get(j).getTaxiVide() == 0) {
-								recsRentable.remove(j);
-							} else if (!(recsRentable.get(j).getTaxiVide() == 0)) {
-								recsRentable.get(j).setProfit(recsRentable.get(j).getMediane()/ recsRentable.get(j).getTaxiVide());
-							}
+
 							break;
 						}
 					}
 
+					// recalcul de la médiane
+					if (recsRentable.get(j).getFares().isEmpty()) {
+						recsRentable.get(j).setMediane((double) 0);
+					} else {
+						recsRentable.get(j).setMediane(recsRentable.get(j).getFares().get(recsRentable.get(j).getFares().size() / 2));
+					}
+					// suppression de la case si elle est vide
+					if (recsRentable.get(j).getMediane() == 0 && recsRentable.get(j).getTaxiVide() == 0) {
+						recsRentable.remove(j);
+					}
+					// Sinon recalcule de profit
+					else if (!(recsRentable.get(j).getTaxiVide() == 0)) {
+						recsRentable.get(j).setProfit(recsRentable.get(j).getMediane() / recsRentable.get(j).getTaxiVide());
+					}
+					// pas de calcul de profit si nm de taxi vide=0
+					else {
+						recsRentable.get(j).setProfit(0.0);
+					}
 				}
 			}
 		}
@@ -248,8 +236,8 @@ public class Query2 extends AbstractQueryProcessor {
 
 		/*
 		 * Le grille fait 600 case x 600 cases. Chaque case fait 250m x 250m
-		 * Coordonnées de la 1ère case : 20.7374685, -37.4567925 250 m to South
-		 * = 0.002245778 (lattitude) 250 m to East = 0.002993 (longitude)
+		 * Coordonnées de la 1ère case : ?,? 250 m to South = 0.002245778
+		 * (lattitude) 250 m to East = 0.002993 (longitude)
 		 */
 
 		double pickup_longitude = record.getPickup_longitude();
