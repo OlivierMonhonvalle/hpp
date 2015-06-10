@@ -106,7 +106,6 @@ public class Query2 extends AbstractQueryProcessor {
 				recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
 				// System.out.println("Taxi vide : " +
 				// recsRentable.get(i).getTaxiVide());
-				recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
 				// On calcule le profit
 				celluleArriv_existe = true;
 			}
@@ -131,10 +130,17 @@ public class Query2 extends AbstractQueryProcessor {
 					recsRentable.get(i).getFares().add((double) (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount()));
 					celluleDep_existe = true;
 				}
-				recsRentable.get(i).setMediane(recsRentable.get(i).getFares().get(recsRentable.get(i).getFares().size() / 2));
+				if(recsRentable.get(i).getFares().isEmpty()){
+					recsRentable.get(i).setProfit(0.0);
+				}
+				else{
+				recsRentable.get(i).setMediane(recsRentable.get(i).getFares().get(recsRentable.get(i).getFares().size() / 2));}
 				//System.out.println(recsRentable.get(i).getX() + " " + recsRentable.get(i).getY() + " Mediane : " + recsRentable.get(i).getMediane());
 				if (!(recsRentable.get(i).getTaxiVide() == 0)) {
 					recsRentable.get(i).setProfit(recsRentable.get(i).getMediane() / recsRentable.get(i).getTaxiVide());
+				}
+				else{
+					recsRentable.get(i).setProfit(0.0);
 				}
 			}
 		}
@@ -159,7 +165,7 @@ public class Query2 extends AbstractQueryProcessor {
 			recRentable.setY(depY);
 			recRentable.getFares().add((double) (recs30.getLast().getFare_amount() + recs30.getLast().getTip_amount()));
 			recRentable.setMediane(recRentable.getFares().get(recRentable.getFares().size() / 2));
-			recRentable.setProfit(recRentable.getMediane() / recRentable.getTaxiVide());
+			recRentable.setProfit(0.0);
 			recsRentable.add(recRentable);
 			//System.out.println("creation cellule départ : " + recRentable);
 		}
@@ -172,7 +178,7 @@ public class Query2 extends AbstractQueryProcessor {
 					// on supprime un taxi vide si besoin
 					if ((recsRentable.get(j).getiDs().contains(recs30.get(i).getHack_license()))) {
 						recsRentable.get(j).setTaxiVide(recsRentable.get(j).getTaxiVide() - 1);
-						recsRentable.get(i).getiDs().remove(recs30.getLast().getHack_license());
+						recsRentable.get(j).getiDs().remove(recs30.get(i).getHack_license());
 					}
 					// suppression de la case si elle est vide
 					if (recsRentable.get(j).getMediane() == 0 && recsRentable.get(j).getTaxiVide() == 0) {

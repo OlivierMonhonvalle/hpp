@@ -1,0 +1,200 @@
+2013-01-01 00:02:00 , 2013-01-01 00:02:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 1901996
+2013-01-01 00:02:00 , 2013-01-01 00:04:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 120644
+2013-01-01 00:02:00 , 2013-01-01 00:06:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 97255
+2013-01-01 00:02:00 , 2013-01-01 00:08:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 91099
+2013-01-01 00:02:00 , 2013-01-01 00:10:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 97664
+2013-01-01 00:02:00 , 2013-01-01 00:12:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 101357
+2013-01-01 00:02:00 , 2013-01-01 00:14:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 99717
+2013-01-01 00:02:00 , 2013-01-01 00:16:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 105051
+2013-01-01 00:02:00 , 2013-01-01 00:18:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 163321
+2013-01-01 00:04:00 , 2013-01-01 00:20:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 136238
+2013-01-01 00:06:00 , 2013-01-01 00:22:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 134597
+2013-01-01 00:08:00 , 2013-01-01 00:24:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 134596
+2013-01-01 00:10:00 , 2013-01-01 00:26:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 137880
+2013-01-01 00:12:00 , 2013-01-01 00:28:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 135418
+2013-01-01 00:14:00 , 2013-01-01 00:30:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 139521
+2013-01-01 00:16:00 , 2013-01-01 00:32:00[x=1, y=5, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 132544
+2013-01-01 00:18:00 , 2013-01-01 00:34:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 167835
+2013-01-01 00:20:00 , 2013-01-01 00:36:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 147728
+2013-01-01 00:22:00 , 2013-01-01 00:38:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 155935
+2013-01-01 00:24:00 , 2013-01-01 00:40:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 146086
+2013-01-01 00:26:00 , 2013-01-01 00:42:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 153473
+2013-01-01 00:28:00 , 2013-01-01 00:44:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 171529
+2013-01-01 00:30:00 , 2013-01-01 00:46:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 130903
+2013-01-01 00:32:00 , 2013-01-01 00:48:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125979
+2013-01-01 00:34:00 , 2013-01-01 00:50:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 00:36:00 , 2013-01-01 00:52:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126800
+2013-01-01 00:38:00 , 2013-01-01 00:54:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 00:40:00 , 2013-01-01 00:56:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125979
+2013-01-01 00:42:00 , 2013-01-01 00:58:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 00:44:00 , 2013-01-01 01:00:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 00:46:00 , 2013-01-01 01:02:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126390
+2013-01-01 00:48:00 , 2013-01-01 01:04:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126389
+2013-01-01 00:50:00 , 2013-01-01 01:06:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 00:52:00 , 2013-01-01 01:08:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 00:54:00 , 2013-01-01 01:10:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126390
+2013-01-01 00:56:00 , 2013-01-01 01:12:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 00:58:00 , 2013-01-01 01:14:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 01:00:00 , 2013-01-01 01:16:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125158
+2013-01-01 01:02:00 , 2013-01-01 01:18:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 01:04:00 , 2013-01-01 01:20:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 01:06:00 , 2013-01-01 01:22:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 137469
+2013-01-01 01:08:00 , 2013-01-01 01:24:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 148139
+2013-01-01 01:10:00 , 2013-01-01 01:26:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 143624
+2013-01-01 01:12:00 , 2013-01-01 01:28:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 155935
+2013-01-01 01:14:00 , 2013-01-01 01:30:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 128441
+2013-01-01 01:16:00 , 2013-01-01 01:32:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122696
+2013-01-01 01:18:00 , 2013-01-01 01:34:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 01:20:00 , 2013-01-01 01:36:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 121465
+2013-01-01 01:22:00 , 2013-01-01 01:38:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122696
+2013-01-01 01:24:00 , 2013-01-01 01:40:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123516
+2013-01-01 01:26:00 , 2013-01-01 01:42:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123106
+2013-01-01 01:28:00 , 2013-01-01 01:44:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122286
+2013-01-01 01:30:00 , 2013-01-01 01:46:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 130903
+2013-01-01 01:32:00 , 2013-01-01 01:48:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123107
+2013-01-01 01:34:00 , 2013-01-01 01:50:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 01:36:00 , 2013-01-01 01:52:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122696
+2013-01-01 01:38:00 , 2013-01-01 01:54:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 01:40:00 , 2013-01-01 01:56:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123517
+2013-01-01 01:42:00 , 2013-01-01 01:58:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124337
+2013-01-01 01:44:00 , 2013-01-01 02:00:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123106
+2013-01-01 01:46:00 , 2013-01-01 02:02:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123107
+2013-01-01 01:48:00 , 2013-01-01 02:04:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 01:50:00 , 2013-01-01 02:06:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123107
+2013-01-01 01:52:00 , 2013-01-01 02:08:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125158
+2013-01-01 01:54:00 , 2013-01-01 02:10:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 01:56:00 , 2013-01-01 02:12:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125158
+2013-01-01 01:58:00 , 2013-01-01 02:14:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124337
+2013-01-01 02:00:00 , 2013-01-01 02:16:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123517
+2013-01-01 02:02:00 , 2013-01-01 02:18:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 02:04:00 , 2013-01-01 02:20:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 02:06:00 , 2013-01-01 02:22:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 121055
+2013-01-01 02:08:00 , 2013-01-01 02:24:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123517
+2013-01-01 02:10:00 , 2013-01-01 02:26:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125569
+2013-01-01 02:12:00 , 2013-01-01 02:28:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123106
+2013-01-01 02:14:00 , 2013-01-01 02:30:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125159
+2013-01-01 02:16:00 , 2013-01-01 02:32:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125568
+2013-01-01 02:18:00 , 2013-01-01 02:34:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125158
+2013-01-01 02:20:00 , 2013-01-01 02:36:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 02:22:00 , 2013-01-01 02:38:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124337
+2013-01-01 02:24:00 , 2013-01-01 02:40:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123517
+2013-01-01 02:26:00 , 2013-01-01 02:42:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122286
+2013-01-01 02:28:00 , 2013-01-01 02:44:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 171938
+2013-01-01 02:30:00 , 2013-01-01 02:46:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 133776
+2013-01-01 02:32:00 , 2013-01-01 02:48:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 127621
+2013-01-01 02:34:00 , 2013-01-01 02:50:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125159
+2013-01-01 02:36:00 , 2013-01-01 02:52:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125158
+2013-01-01 02:38:00 , 2013-01-01 02:54:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124748
+2013-01-01 02:40:00 , 2013-01-01 02:56:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124337
+2013-01-01 02:42:00 , 2013-01-01 02:58:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125979
+2013-01-01 02:44:00 , 2013-01-01 03:00:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123927
+2013-01-01 02:46:00 , 2013-01-01 03:02:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126389
+2013-01-01 02:48:00 , 2013-01-01 03:04:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 128851
+2013-01-01 02:50:00 , 2013-01-01 03:06:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126800
+2013-01-01 02:52:00 , 2013-01-01 03:08:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126390
+2013-01-01 02:54:00 , 2013-01-01 03:10:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 127621
+2013-01-01 02:56:00 , 2013-01-01 03:12:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 125979
+2013-01-01 02:58:00 , 2013-01-01 03:14:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126799
+2013-01-01 03:00:00 , 2013-01-01 03:16:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 126800
+2013-01-01 03:02:00 , 2013-01-01 03:18:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 144445
+2013-01-01 03:04:00 , 2013-01-01 03:20:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 137058
+2013-01-01 03:06:00 , 2013-01-01 03:22:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 103409
+2013-01-01 03:08:00 , 2013-01-01 03:24:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 109564
+2013-01-01 03:10:00 , 2013-01-01 03:26:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 116131
+2013-01-01 03:12:00 , 2013-01-01 03:28:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 115310
+2013-01-01 03:14:00 , 2013-01-01 03:30:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 115721
+2013-01-01 03:16:00 , 2013-01-01 03:32:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 119413
+2013-01-01 03:18:00 , 2013-01-01 03:34:00[x=1, y=1, taxiVide=0, mediane=1.0, profit=0.0, x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 121465
+2013-01-01 03:20:00 , 2013-01-01 03:36:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 124338
+2013-01-01 03:22:00 , 2013-01-01 03:38:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 122696
+2013-01-01 03:24:00 , 2013-01-01 03:40:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 121465
+2013-01-01 03:26:00 , 2013-01-01 03:42:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123106
+2013-01-01 03:28:00 , 2013-01-01 03:44:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123107
+2013-01-01 03:30:00 , 2013-01-01 03:46:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123517
+2013-01-01 03:32:00 , 2013-01-01 03:48:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 123106
+2013-01-01 03:34:00 , 2013-01-01 03:50:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 146086
+2013-01-01 03:36:00 , 2013-01-01 03:52:00[x=1, y=7, taxiVide=1, mediane=0.0, profit=0.0, x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 141573
+2013-01-01 03:38:00 , 2013-01-01 03:54:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 168245
+2013-01-01 03:40:00 , 2013-01-01 03:56:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 143214
+2013-01-01 03:42:00 , 2013-01-01 03:58:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 143214
+2013-01-01 03:44:00 , 2013-01-01 04:00:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 139931
+2013-01-01 03:46:00 , 2013-01-01 04:02:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 146497
+2013-01-01 03:48:00 , 2013-01-01 04:04:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 141983
+2013-01-01 03:50:00 , 2013-01-01 04:06:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 139931
+2013-01-01 03:52:00 , 2013-01-01 04:08:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 135828
+2013-01-01 03:54:00 , 2013-01-01 04:10:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 138289
+2013-01-01 03:56:00 , 2013-01-01 04:12:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 135827
+2013-01-01 03:58:00 , 2013-01-01 04:14:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 130903
+2013-01-01 04:00:00 , 2013-01-01 04:16:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 130903
+2013-01-01 04:02:00 , 2013-01-01 04:18:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 128441
+2013-01-01 04:04:00 , 2013-01-01 04:20:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 135418
+2013-01-01 04:06:00 , 2013-01-01 04:22:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 127620
+2013-01-01 04:08:00 , 2013-01-01 04:24:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 131724
+2013-01-01 04:10:00 , 2013-01-01 04:26:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 109154
+2013-01-01 04:12:00 , 2013-01-01 04:28:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 111206
+2013-01-01 04:14:00 , 2013-01-01 04:30:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 109975
+2013-01-01 04:16:00 , 2013-01-01 04:32:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 112027
+2013-01-01 04:18:00 , 2013-01-01 04:34:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 109975
+2013-01-01 04:20:00 , 2013-01-01 04:36:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 112438
+2013-01-01 04:22:00 , 2013-01-01 04:38:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 110796
+2013-01-01 04:24:00 , 2013-01-01 04:40:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 108334
+2013-01-01 04:26:00 , 2013-01-01 04:42:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 108744
+2013-01-01 04:28:00 , 2013-01-01 04:44:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 107103
+2013-01-01 04:30:00 , 2013-01-01 04:46:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 107923
+2013-01-01 04:32:00 , 2013-01-01 04:48:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 108334
+2013-01-01 04:34:00 , 2013-01-01 04:50:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 112027
+2013-01-01 04:36:00 , 2013-01-01 04:52:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 110385
+2013-01-01 04:38:00 , 2013-01-01 04:54:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 111617
+2013-01-01 04:40:00 , 2013-01-01 04:56:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 105871
+2013-01-01 04:42:00 , 2013-01-01 04:58:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 109565
+2013-01-01 04:44:00 , 2013-01-01 05:00:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 121465
+2013-01-01 04:46:00 , 2013-01-01 05:02:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 110385
+2013-01-01 04:48:00 , 2013-01-01 05:04:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 95202
+2013-01-01 04:50:00 , 2013-01-01 05:06:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 91509
+2013-01-01 04:52:00 , 2013-01-01 05:08:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 100126
+2013-01-01 04:54:00 , 2013-01-01 05:10:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 92741
+2013-01-01 04:56:00 , 2013-01-01 05:12:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 92740
+2013-01-01 04:58:00 , 2013-01-01 05:14:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 90689
+2013-01-01 05:00:00 , 2013-01-01 05:16:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 91920
+2013-01-01 05:02:00 , 2013-01-01 05:18:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 92330
+2013-01-01 05:04:00 , 2013-01-01 05:20:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78378
+2013-01-01 05:06:00 , 2013-01-01 05:22:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 77557
+2013-01-01 05:08:00 , 2013-01-01 05:24:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 77557
+2013-01-01 05:10:00 , 2013-01-01 05:26:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 77146
+2013-01-01 05:12:00 , 2013-01-01 05:28:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 80840
+2013-01-01 05:14:00 , 2013-01-01 05:30:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 102589
+2013-01-01 05:16:00 , 2013-01-01 05:32:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 92741
+2013-01-01 05:18:00 , 2013-01-01 05:34:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 92330
+2013-01-01 05:20:00 , 2013-01-01 05:36:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 96023
+2013-01-01 05:22:00 , 2013-01-01 05:38:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 93561
+2013-01-01 05:24:00 , 2013-01-01 05:40:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 100127
+2013-01-01 05:26:00 , 2013-01-01 05:42:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 96023
+2013-01-01 05:28:00 , 2013-01-01 05:44:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 93971
+2013-01-01 05:30:00 , 2013-01-01 05:46:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 146497
+2013-01-01 05:32:00 , 2013-01-01 05:48:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 116951
+2013-01-01 05:34:00 , 2013-01-01 05:50:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 104230
+2013-01-01 05:36:00 , 2013-01-01 05:52:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 94792
+2013-01-01 05:38:00 , 2013-01-01 05:54:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 96844
+2013-01-01 05:40:00 , 2013-01-01 05:56:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 82892
+2013-01-01 05:42:00 , 2013-01-01 05:58:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 80840
+2013-01-01 05:44:00 , 2013-01-01 06:00:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79609
+2013-01-01 05:46:00 , 2013-01-01 06:02:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79198
+2013-01-01 05:48:00 , 2013-01-01 06:04:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79609
+2013-01-01 05:50:00 , 2013-01-01 06:06:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79199
+2013-01-01 05:52:00 , 2013-01-01 06:08:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79198
+2013-01-01 05:54:00 , 2013-01-01 06:10:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79609
+2013-01-01 05:56:00 , 2013-01-01 06:12:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 94381
+2013-01-01 05:58:00 , 2013-01-01 06:14:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 84122
+2013-01-01 06:00:00 , 2013-01-01 06:16:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 80020
+2013-01-01 06:02:00 , 2013-01-01 06:18:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 96024
+2013-01-01 06:04:00 , 2013-01-01 06:20:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 90688
+2013-01-01 06:06:00 , 2013-01-01 06:22:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 95613
+2013-01-01 06:08:00 , 2013-01-01 06:24:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 81250
+2013-01-01 06:10:00 , 2013-01-01 06:26:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 80429
+2013-01-01 06:12:00 , 2013-01-01 06:28:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 93561
+2013-01-01 06:14:00 , 2013-01-01 06:30:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78788
+2013-01-01 06:16:00 , 2013-01-01 06:32:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 79609
+2013-01-01 06:18:00 , 2013-01-01 06:34:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78789
+2013-01-01 06:20:00 , 2013-01-01 06:36:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78378
+2013-01-01 06:22:00 , 2013-01-01 06:38:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78788
+2013-01-01 06:24:00 , 2013-01-01 06:40:00[x=1, y=5, taxiVide=0, mediane=1.0, profit=0.0] , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , NULL , 78378
