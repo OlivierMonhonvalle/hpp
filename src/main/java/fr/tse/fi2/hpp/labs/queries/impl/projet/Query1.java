@@ -47,7 +47,6 @@ public class Query1 extends AbstractQueryProcessor {
 			recsCell.removeFirst();
 		}
 		firstTime = recs.getFirst().getDropoff_datetime();
-		
 		prepareSortie(start, count(recsCell));
 		// écriture de la sortie dans un Thread
 		this.listsum.add(sortie);
@@ -58,7 +57,6 @@ public class Query1 extends AbstractQueryProcessor {
 	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list){
 		Date dd = new Date(firstTime);
 		Date df = new Date(lastTime);
-		long delay = System.nanoTime() - start;
 		String listnull = "";
 		int taille = list.size();
 		if (taille > 10){
@@ -69,6 +67,7 @@ public class Query1 extends AbstractQueryProcessor {
 		for (int k = 0; k < 10 - taille ; k++){
 			listnull += " , NULL";
 		}
+		long delay = System.nanoTime() - start;
 		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) +" , "
 		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + list + listnull + " , " + delay ;
 	}
@@ -83,22 +82,10 @@ public class Query1 extends AbstractQueryProcessor {
 		 * 0.004491556 (lattitude) 500 m to East = 0.005986 (longitude)
 		 */
 		ArrayList<Integer> recCell = new ArrayList<>();
-		double a = pickup_longitude + 74.913585 + 0.005986 / 2;
-		double xDepDouble = a / 0.005986;
-		recCell.add((int) xDepDouble + 1);
-
-		a = -(pickup_latitude - 41.474937 - 0.004491556 / 2);
-		double yDepDouble = a / 0.004491556;
-		recCell.add((int) yDepDouble + 1);
-
-		a = dropoff_longitude + 74.913585 + 0.005986 / 2;
-		double xArrDouble = a / 0.005986;
-		recCell.add((int) xArrDouble + 1);
-
-		a = -(dropoff_latitude - 41.474937 - 0.004491556 / 2);
-		double yArrDouble = a / 0.004491556;
-		recCell.add((int) yArrDouble + 1);
-		
+		recCell.add((int) ((pickup_longitude + 74.913585 + 0.005986 / 2)/0.005986 + 1));
+		recCell.add((int) ((-(pickup_latitude - 41.474937 - 0.004491556 / 2))/ 0.004491556 + 1));
+		recCell.add((int) ((dropoff_longitude + 74.913585 + 0.005986 / 2)/0.005986 + 1));
+		recCell.add((int) ((-(dropoff_latitude - 41.474937 - 0.004491556 / 2))/ 0.004491556 + 1));
 		recsCell.add(recCell);
 	}
 	

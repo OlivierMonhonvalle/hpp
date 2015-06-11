@@ -49,8 +49,7 @@ public class Cell {
 
 	public boolean equals(Cell cell) {
 		if (this.depX == cell.getDepX() && this.depY == cell.getDepY() && this.arrX == cell.getArrX() && this.arrY == cell.getarrY()) {
-			return false;
-
+			return true;
 		}
 		else{
 			return true;
