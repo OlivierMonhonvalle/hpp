@@ -73,7 +73,7 @@ public class RecRentable implements Comparable<RecRentable> {
 	}
 	
 	public String affiche() {
-		return x + "." + y + "," + taxiVide + "," + mediane + "," + profit;
+		return x + "." + y + "," + taxiVide + "," + mediane + "," + profit + ",";
 	}
 
 	@Override

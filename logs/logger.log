@@ -1,27 +1,4 @@
-[19:26:01] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:26:01] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 1
-[19:26:01] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:26:04] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 1
-[19:26:05] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:26:05] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 2
-[19:26:05] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:26:08] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 2
-[19:26:08] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:26:08] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 3
-[19:26:08] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:26:21] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 3
-[19:26:21] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:26:21] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 4
-[19:26:21] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:26:54] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 4
-[19:26:55] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:26:55] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 5
-[19:26:55] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:28:01] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 5
-[19:28:02] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:28:02] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 6
-[19:28:02] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
-[19:29:54] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 6
-[19:29:55] [INFO ] (ProjetJHM.java:main:63) Finished parsing
-[19:29:55] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 7
-[19:29:55] [INFO ] (ProjetJHM.java:main:87) Finished Dispatching
+[16:12:34] [INFO ] (MainNonStreaming.java:main:52) Finished parsing
+[16:12:34] [INFO ] (AbstractQueryProcessor.java:run:94) Starting query processor 1
+[16:12:34] [INFO ] (MainNonStreaming.java:main:76) Finished Dispatching
+[16:12:38] [INFO ] (AbstractQueryProcessor.java:run:114) Closing query processor 1

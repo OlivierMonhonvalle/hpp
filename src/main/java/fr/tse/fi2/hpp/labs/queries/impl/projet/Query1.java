@@ -15,125 +15,136 @@ import fr.tse.fi2.hpp.labs.queries.AbstractQueryProcessor;
 
 public class Query1 extends AbstractQueryProcessor {
 
-
 	// Tableau contenant tous les debsRecord des 30 dernières minutes
 	private static LinkedList<DebsRecord> recs = new LinkedList<>();
-	// Tableau contenant tous les cellules des debsRecord des 30 dernières minutes
-	private static LinkedList<ArrayList<Integer>> recsCell = new LinkedList<>();
+	// Tableau contenant tous les cellules des debsRecord des 30 dernières
+	// minutes
+	private static HashMap<ArrayList<Integer>, Integer> recsCell = new HashMap<ArrayList<Integer>, Integer>();
 	// Première date des DebsRecord présent dans recs
 	private static long firstTime;
 	// Dernière date des DebsRecord présent dans recs
 	private static long lastTime;
-	// Valeur ecrite dans le fichier 
+	// Valeur ecrite dans le fichier
 	private String sortie;
 
-	
 	public Query1(QueryProcessorMeasure measure) {
 		super(measure);
 		// TODO Auto-generated constructor stub
 	}
 
-	// Fonction permettant de recuperer toutes les DebsRecord ayant eu lieu les 30 dernieres minutes
-	
+	// Fonction permettant de recuperer toutes les DebsRecord ayant eu lieu les
+	// 30 dernieres minutes
+
 	@Override
 	protected void process(DebsRecord record) {
 		// TODO Auto-generated method stub
 		long start = System.nanoTime();
 		recs.add(record);
 		lastTime = record.getDropoff_datetime();
-		getCell(record.getPickup_longitude(),record.getPickup_latitude(),record.getDropoff_longitude(),record.getDropoff_latitude());
+		addCell(record);
 		while ((lastTime - recs.getFirst().getDropoff_datetime()) / 60000 > 30) {
+			lowerCell(recs.getFirst());
 			recs.removeFirst();
-			recsCell.removeFirst();
 		}
 		firstTime = recs.getFirst().getDropoff_datetime();
-		prepareSortie(start, count(recsCell));
+		prepareSortie(start, count());
 		// écriture de la sortie dans un Thread
 		this.listsum.add(sortie);
 	}
-	
+
 	// Fonction permettant de préparer l'écriture de la sortie
-	
-	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list){
+
+	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list) {
 		Date dd = new Date(firstTime);
 		Date df = new Date(lastTime);
 		String listnull = "";
 		int taille = list.size();
-		if (taille > 10){
-			for (int j = 10; j < taille; j++){
+		if (taille > 10) {
+			for (int j = 10; j < taille; j++) {
 				list.remove(10);
 			}
 		}
-		for (int k = 0; k < 10 - taille ; k++){
-			listnull += " , NULL";
+		for (int k = 0; k < 10 - taille; k++) {
+			listnull += ",NULL";
 		}
+		String formatedString = list.toString()
+			    .replace(", ", ",") 
+			    .replace("[", "") 
+			    .replace("]", "") 
+			    .trim();      
 		long delay = System.nanoTime() - start;
-		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) +" , "
-		+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + list + listnull + " , " + delay ;
+		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) + "," + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df) + "," + formatedString + listnull + "," + delay;
 	}
-	
-	// Fonction transformant les coordonnées des DepsRecords en coordonnée cellulaire
 
-	public static void getCell(double pickup_longitude, double pickup_latitude,
-			double dropoff_longitude, double dropoff_latitude) {
+	public static void addCell(DebsRecord record) {
+		ArrayList<Integer> array = toArray(record);
+		if (recsCell.containsKey(array)) {
+			recsCell.put(array, recsCell.get(array) + 1);
+		} else {
+			recsCell.put(array, 1);
+		}
+	}
+
+	// Fonction permettant de compter le nombre de Taxis faisant le même
+	// parcours
+
+	public static ArrayList<ArrayList<Integer>> count() {
+
+		ValueComparator bvc = new ValueComparator(recsCell);
+		TreeMap<ArrayList<Integer>, Integer> sorted_map = new TreeMap<ArrayList<Integer>, Integer>(bvc);
+		sorted_map.putAll(recsCell);
+
+		ArrayList<ArrayList<Integer>> sorted_List = new ArrayList<>();
+		for (ArrayList<Integer> key : sorted_map.keySet()) {
+			sorted_List.add(key);
+		}
+		return sorted_List;
+	}
+
+	static ArrayList<Integer> toArray(DebsRecord last) {
 		/*
 		 * Le grille fait 300 case x 300 cases. Chaque case fait 500m x 500m
 		 * Coordonnées de la 1ère case : 41.474937, -74.913585 500 m to South =
 		 * 0.004491556 (lattitude) 500 m to East = 0.005986 (longitude)
 		 */
-		ArrayList<Integer> recCell = new ArrayList<>();
-		recCell.add((int) ((pickup_longitude + 74.913585 + 0.005986 / 2)/0.005986 + 1));
-		recCell.add((int) ((-(pickup_latitude - 41.474937 - 0.004491556 / 2))/ 0.004491556 + 1));
-		recCell.add((int) ((dropoff_longitude + 74.913585 + 0.005986 / 2)/0.005986 + 1));
-		recCell.add((int) ((-(dropoff_latitude - 41.474937 - 0.004491556 / 2))/ 0.004491556 + 1));
-		recsCell.add(recCell);
+		ArrayList<Integer> array = new ArrayList<Integer>();
+		array.add((int) ((last.getPickup_longitude() + 74.913585 + 0.005986 / 2) / 0.005986 + 1));
+		array.add((int) ((-(last.getPickup_latitude() - 41.474937 - 0.004491556 / 2)) / 0.004491556 + 1));
+		array.add((int) ((last.getDropoff_longitude() + 74.913585 + 0.005986 / 2) / 0.005986 + 1));
+		array.add((int) ((-(last.getDropoff_latitude() - 41.474937 - 0.004491556 / 2)) / 0.004491556 + 1));
+		return array;
 	}
-	
-	// Fonction permettant de compter le nombre de Taxis faisant le même parcours
-	
-	public static ArrayList<ArrayList<Integer>> count(
-			LinkedList<ArrayList<Integer>> recsCell2) {
-		
-		HashMap<ArrayList<Integer>, Integer> recsCellCount = new HashMap<ArrayList<Integer>, Integer>();
-		ValueComparator bvc =  new ValueComparator(recsCellCount);
-		TreeMap<ArrayList<Integer>, Integer> sorted_map = new TreeMap<ArrayList<Integer>, Integer>(bvc);
-		
-		for (int i = 0; i < recsCell2.size(); i++) {
-			if (recsCellCount.containsKey(recsCell2.get(i))) {
-				recsCellCount.put(recsCell2.get(i),
-						recsCellCount.get(recsCell2.get(i)) + 1);
-			} else {
-				recsCellCount.put(recsCell2.get(i), 1);
-			}
-		}
-		sorted_map.putAll(recsCellCount);
 
-		ArrayList<ArrayList<Integer>> sorted_List = new ArrayList<>();
-			for (ArrayList<Integer> key : sorted_map.keySet()) {
-				sorted_List.add(key);
-		}
-			return sorted_List;
-	}
-	
-	// Fonction permettant de classer les routes de la plus fréquentée à la moins fréquentée
-	
+	// Fonction permettant de classer les routes de la plus fréquentée à la
+	// moins fréquentée
+
 	static class ValueComparator implements Comparator<ArrayList<Integer>> {
 
-	    Map<ArrayList<Integer>, Integer> base;
-	    public ValueComparator(HashMap<ArrayList<Integer>, Integer> recsCellCount) {
-	        this.base = recsCellCount;
-	    }
+		Map<ArrayList<Integer>, Integer> base;
+
+		public ValueComparator(HashMap<ArrayList<Integer>, Integer> recsCellCount) {
+			this.base = recsCellCount;
+		}
 
 		@Override
 		public int compare(ArrayList o1, ArrayList o2) {
 			// TODO Auto-generated method stub
-	        if (base.get(o1) >= base.get(o2)) {
-	            return -1;
-	        } else {
-	            return 1;
-	        }
+			if (base.get(o1) > base.get(o2)) {
+				return -1;
+			} else {
+				return 1;
+			}
 		}
 	}
+
+	private void lowerCell(DebsRecord last) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> arrayLast = toArray(last);
+		recsCell.put(arrayLast, recsCell.get(arrayLast) - 1);
+
+		if (recsCell.get(arrayLast) == 0) {
+			recsCell.remove(arrayLast);
+		}
+
+	}
 }
-
-

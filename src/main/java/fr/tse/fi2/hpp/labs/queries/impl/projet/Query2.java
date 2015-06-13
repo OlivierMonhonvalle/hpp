@@ -82,14 +82,14 @@ public class Query2 extends AbstractQueryProcessor {
 				rentableSortie += recsRentablef.get(k).affiche();
 			}
 			else{
-				rentableSortie += ",NULL";
+				rentableSortie += "NULL,";
 			}
 		}
 		long delay = System.nanoTime() - start;
 	
 		sortie = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(dd) + ","
 				+ new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(df)
-				+ "," + rentableSortie + "," + delay;
+				+ "," + rentableSortie + delay;
 	}
 
 	private void majRecsRentable() {
