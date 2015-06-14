@@ -52,7 +52,7 @@ public class Query1 extends AbstractQueryProcessor {
 		this.listsum.add(sortie);
 	}
 
-	// Fonction permettant de préparer l'écriture de la sortie
+	// Fonction permettant de préparer l'écriture de la sortie dans le fichier texte
 
 	public void prepareSortie(long start, ArrayList<ArrayList<Integer>> list) {
 		Date dd = new Date(firstTime);

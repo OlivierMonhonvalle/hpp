@@ -28,6 +28,7 @@ public class Query2 extends AbstractQueryProcessor {
 
 	private static long lastTime;
 	private static long firstTime15;
+	// variables permettant de stocker les cordonnée des cellules de départ et des cellules d'arrivées
 	private static int depX, depY, arrX, arrY;
 	private String sortie;
 	private String rentableSortie = "";
@@ -62,6 +63,8 @@ public class Query2 extends AbstractQueryProcessor {
 		// System.out.println(recsRentable.toString());
 		this.listsum.add(sortie);
 	}
+	
+	// Fonction permettant de préparer l'écriture de la sortie dans le fichier texte
 
 	public void prepareSortie(long start, LinkedList<RecRentable> recsRentablef) {
 		Date dd = new Date(firstTime15);
@@ -95,6 +98,8 @@ public class Query2 extends AbstractQueryProcessor {
 	private void majRecsRentable() {
 		// TODO Auto-generated method stub
 		// modification due à l'ajout du dernier record
+		// On va dans cette fonction soit créer une cellule si la cellule n'avait pas encore été rencontré
+		// soit mettre à jour cette cellule.
 		getCell(recs30.getLast());
 		boolean celluleArriv_existe = false;
 		boolean celluleDep_existe = false;
